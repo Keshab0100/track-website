@@ -120,6 +120,16 @@
     
 }
 
+.leetcode{
+    text-align: center;
+    margin: 3rem;
+    padding: 10px 10px 10px 10px;
+    padding-top: 2rem;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+    transition:transform 0.5s ;
+}
+
 
 .mhead{
     text-align: center;
