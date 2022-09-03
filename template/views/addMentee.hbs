@@ -5,17 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addMentee.css">
     <title>Add Mentee</title>
 </head>
 
 <body>
-    <form action="" onsubmit="/menteeLogin">
-        Name
-        <input type="text" id="name">
-        Number
-        <input type="text" id="no">
-        <input type="submit" id="subtn" value="Submit">
-    </form>
+    <div class="split-screen">
+        <div class="left">
+            {{!-- <br>
+            <div class="form" data-aos="fade-up">
+                <div class="input-container">
+                    <label for="fname">Full Name</label>
+                    <input id="fname" name="fname" type="text" placeholder="Full Name" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="Email" required>
+                </div>
+                <div class="input-container">
+                    <label for="mentorid">Mentor ID</label>
+                    <input id="mentorid" name="mentorID" type="text" placeholder="Menter ID" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Password" required>
+                    <i class="far fa-eye-slash"></i>
+                </div>
+                <button class="register-btn" id="submitbtn" type="submit">Register</button>
+                </section>
+            </div> --}}
+            <div class="form">
+                <div class="input-container">
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input-container">
+                    <label for="pno">Phone Number</label>
+                    <input type="number" id="pno">
+                </div>
+                <div class="input-container">
+                    <label for="usn">USN</label>
+                    <input type="text" id="usn">
+                </div>
+                <div class="input-container">
+                    <label for="codechef">Enter CodeChef Username</label>
+                    <input type="text" id="codechef">
+                </div>
+                <input type="submit" id="subtn" value="Submit">
+            </div>
+        </div>
+        <div class="right" data-aos="fade-up">
+            <form action="" onsubmit="/menteeLogin">
+                {{!-- <div class="input-container">
+                    <label for="email">Codeforces Profile Url</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="input-container">
+                    <label for="pno">Leetcode Profile Url</label>
+                    <input type="number" id="pno">
+                </div> --}}
+                {{!-- <div class="input-container">
+                    <label for="usn">USN</label>
+                    <input type="text" id="usn">
+                </div> --}}
+                {{!-- <input type="submit" id="subtn" value="Submit"> --}}
+            </form>
+
+        </div>
+    </div>
 </body>
 <script type="module">
     // Import the functions you need from the SDKs you need
@@ -27,27 +88,33 @@
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-        apiKey: "AIzaSyBPhHeE4Mql11NDIQuBmFr9gK97gfd16zE",
-        authDomain: "hackerzstreet-48926.firebaseapp.com",
-        projectId: "hackerzstreet-48926",
-        storageBucket: "hackerzstreet-48926.appspot.com",
-        messagingSenderId: "412284422679",
-        appId: "1:412284422679:web:3cd8cd42fa5146d3486a52"
+        apiKey: "AIzaSyDBHmrl7oJmnxjEGhXaTrhuk5sOS01b3bs",
+        authDomain: "ic-hacks.firebaseapp.com",
+        databaseURL: "https://ic-hacks-default-rtdb.firebaseio.com",
+        projectId: "ic-hacks",
+        storageBucket: "ic-hacks.appspot.com",
+        messagingSenderId: "89955355894",
+        appId: "1:89955355894:web:c8e52d51f7117c76b070d7"
     };
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth(app)
-    var id = 0;
+    const subtn = document.getElementById('subtn')
     subtn.addEventListener('click', (err) => {
-        console.log("hello")
         var pname = document.getElementById('name').value
-        var pno = document.getElementById('no').value
-        set(ref(database, 'mentee/' + no), {
+        var pno = document.getElementById('pno').value
+        var usn = document.getElementById('usn').value
+        var email = document.getElementById('email').value
+        var codechef = document.getElementById('codechef').value
+        set(ref(database, 'mentee/' + usn), {
             name: pname,
-            no: pno
+            no: pno,
+            usn: usn,
+            email: email,
+            codechef: codechef
         }).then(
-            window.open("/addMentee", "_self")
+            console.log("error")
         )
     });
 </script>

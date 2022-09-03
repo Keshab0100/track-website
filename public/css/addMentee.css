@@ -1,0 +1,144 @@
+:root {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  --primary: #f6c453;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.anchor {
+  text-decoration: none;
+  color: var(--primary);
+}
+.anchor:hover {
+  text-decoration: underline;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.split-screen {
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  height: 200px;
+}
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ece6d8;
+}
+.right .copy {
+  color: black;
+  text-align: center;
+}
+.right p {
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+.right .form {
+  width: 328px;
+}
+.left .form {
+  width: 328px;
+}
+.form input {
+  display: block;
+  height: 40px;
+  width: 120%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #183a1d;
+  padding: 0.7rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+#subtn {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: rgb(41, 41, 41);
+  font-weight: 700;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container .checkmark:after {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  width: 5px;
+  height: 10px;
+  left: 8px;
+  top: 4px;
+  transform: rotate(45deg);
+}
+.register-btn {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: rgb(41, 41, 41);
+  font-weight: 700;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.or {
+  position: relative;
+  top: -27px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: #efefef;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgbs(0, 0, 0, 0.6);
+  line-height: 40px;
+  text-align: center;
+}
+.googlesignup {
+  width: 20.5rem;
+  left: 0px;
+}
+@media screen and (min-width: 900px) {
+  .split-screen {
+    flex-direction: row;
+    height: 100vh;
+  }
+  .left,
+  .right {
+    display: flex;
+    width: 50%;
+    height: auto;
+  }
+}

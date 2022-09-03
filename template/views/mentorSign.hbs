@@ -28,6 +28,10 @@
                     <input id="email" name="email" type="email" placeholder="Email" required>
                 </div>
                 <div class="input-container">
+                    <label for="mentorid">Mentor ID</label>
+                    <input id="mentorid" name="mentorID" type="text" placeholder="Menter ID" required>
+                </div>
+                <div class="input-container">
                     <label for="password">Password</label>
                     <input id="password" name="password" type="password" placeholder="Password" required>
                     <i class="far fa-eye-slash"></i>
@@ -41,7 +45,7 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
-    import { getDatabase } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
@@ -50,6 +54,7 @@
     const firebaseConfig = {
         apiKey: "AIzaSyDBHmrl7oJmnxjEGhXaTrhuk5sOS01b3bs",
         authDomain: "ic-hacks.firebaseapp.com",
+        databaseURL: "https://ic-hacks-default-rtdb.firebaseio.com",
         projectId: "ic-hacks",
         storageBucket: "ic-hacks.appspot.com",
         messagingSenderId: "89955355894",
@@ -63,28 +68,27 @@
         var fname = document.getElementById('fname').value;
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                window.open('/mentorLogin', "_self")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(error)
-                alert("Please check your password or email")
-            });
+        var mentorid = document.getElementById('mentorid').value;
+        set(ref(database, 'mentors/' + mentorid), {
+            name: fname,
+            email: email
+        }).then(
+            () => {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        window.open('/mentorLogin', "_self")
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(error)
+                        alert("Please check your password or email")
+                    });
+            }
+        )
 
     });
 </script>
 
 </html>
-{{!-- set(ref(database, 'mentors/' + email + '/' + fname), {
-cno: cno,
-mrp: mrp,
-prodes: prodes,
-pname: pname,
-pimg: pimg,
-}).then(
-window.open("/mentorLogin", "_self")
-) --}}
