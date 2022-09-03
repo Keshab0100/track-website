@@ -73,11 +73,11 @@ p {
   transition: background 0.5s;
 }
 
-.header {
-  background: radial-gradient(#fff, #ffedac);
+#header {
+  background: radial-gradient(#fff, #fedf6e);
   height: 100vh;
 }
-.header .row {
+#header .row {
   margin-top: 70px;
 }
 
