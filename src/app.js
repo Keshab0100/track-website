@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+app.get("/menteeLogin", (req, res) => {
+  res.render("menteeLogin");
+});
+
 app.listen(port, () => {
   console.log("Listening");
 });
