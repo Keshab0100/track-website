@@ -1,7 +1,12 @@
+@font-face {
+  font-family: "sofia";
+  src: url("/fonts/S_P_S_R.otf");
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "sofia";
 }
 
 :root {
@@ -11,7 +16,7 @@
 .navigation {
   width: 100%;
   height: 63px;
-  background: #f6c453;
+  background: #ffda58;
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -103,7 +108,7 @@
   margin-left: 28px;
 }
 .testimonial .col-3 {
-  text-align: center;
+  font-size: 17px;
   padding: 15px;
   margin: 15px;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
@@ -133,11 +138,14 @@
 .col-3 {
   text-decoration: none;
   color: black;
+  padding: 10px;
+  border-radius: 15px;
 }
 .testimonial .col-3 h4 {
   font-weight: 600;
   color: rgb(38, 39, 39);
-  font-size: 16px;
+  font-size: 19px;
+  padding: 6px;
 }
 
 .navigation ul li a .text {
@@ -152,7 +160,7 @@
   margin-top: 8px;
   text-decoration: none;
   color: black;
-  background-color: #f6be3b;
+  background-color: #fff;
   box-shadow: 1px 1px 2px #888888;
   border-radius: 5px;
   margin-left: 4rem;

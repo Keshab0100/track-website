@@ -19,6 +19,9 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbref = ref(database);
 var usnGo;
+// setInterval(function () {
+//   location.reload();
+// }, 40000);
 get(child(dbref, "mentee"))
   .then((snapshot) => {
     if (snapshot.exists()) {
@@ -48,15 +51,15 @@ get(child(dbref, "mentee"))
                 const fill = document.getElementById("fill");
                 fill.innerHTML += `
                   <a class="col-3" href="/menteeDash" id="${data.usn}" onclick = "send(${data.usn})">
-                  <h3 >Name : <span id="name">${data.name}</span></h3>
+                  <h4 >Name : <span id="name">${data.name}</span></h4>
                   <h4 >Email : <span id="email">${data.email}</span></h4>
                   <h4 >USN : <span id="usn">${data.usn}</span></h4>
                   <h4>Codechef rating : <span id="cc">${datamera.rating}</span></h4>
                   <h4>Codeforces rating : <span id="cc">${datameraphir.rating}</span></h4>
                   </a>`;
 
-                var ccrat = datamera.rating;
-                var cfrat = datameraphir.rating;
+                var ccrat = `${datamera.rating}`;
+                var cfrat = `${datameraphir.rating}`;
 
                 update(ref(database, "mentee/" + data.usn), {
                   cc: ccrat,
