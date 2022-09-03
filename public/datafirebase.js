@@ -3,6 +3,7 @@ import {
   get,
   ref,
   child,
+  update,
 } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
 const firebaseConfig = {
@@ -26,16 +27,9 @@ get(child(dbref, "mentee"))
       snapshot.forEach((childSnapshot) => {
         dataaaja.push(childSnapshot.val());
       });
-      console.log(dataaaja);
-
-
-      const cf100 = dataaaja[0].codeforces;
-      console.log(cf100);
-
       dataaaja.map((data) => {
-        // console.log(data);
         const cc = "codechef";
-        const cfun = data.codeforces || "keshab01"
+        const cfun = data.codeforces || "keshab01";
         const ccum = data.codechef;
         const url1 = `https://competitive-coding-api.herokuapp.com/api/${cc}/${ccum}`;
         const url2 = `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
@@ -44,27 +38,35 @@ get(child(dbref, "mentee"))
             return response.json();
           })
           .then((datamera) => {
-            const usn100 = data.usn;
-            // const cc100=usn100.codechef;
-            // console.log(cc100);
+            fetch(url2)
+              .then((response) => {
+                return response.json();
+              })
+              .then((datameraphir) => {
+                const card = document.createElement("div");
+                card.classList = "col-3";
+                const fill = document.getElementById("fill");
+                fill.innerHTML += `
+                  <a class="col-3" href="/menteeDash" id="${data.usn}" onclick = "send(${data.usn})">
+                  <h3 >Name : <span id="name">${data.name}</span></h3>
+                  <h4 >Email : <span id="email">${data.email}</span></h4>
+                  <h4 >USN : <span id="usn">${data.usn}</span></h4>
+                  <h4>Codechef rating : <span id="cc">${datamera.rating}</span></h4>
+                  <h4>Codeforces rating : <span id="cc">${datameraphir.rating}</span></h4>
+                  </a>`;
 
-            const card = document.createElement("div");
-            card.classList = "col-3";
-            const fill = document.getElementById("fill")
-            fill.innerHTML += `
-              <a class="col-3" href="/menteeDash" id="${data.usn}" onclick = "give(${data.usn})">
-              <h3 >Name : <span id="name">${data.name}</span></h3>
-              <h4 >Email : <span id="email">${data.email}</span></h4>
-              <h4 >USN : <span id="usn">${data.usn}</span></h4>
-              <h4>Codechef rating : <span id="cc">${datamera.rating}</span></h4>
-              </a>`;
+                var ccrat = datamera.rating;
+                var cfrat = datameraphir.rating;
+
+                update(ref(database, "mentee/" + data.usn), {
+                  cc: ccrat,
+                  cf: cfrat,
+                });
+                function send(usn) {
+                  window.localStorage.setItem("usn", usn);
+                }
+              });
           });
-        fetch(url2)
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => { });
-        usnGo = data.usn
       });
     } else {
       alert("unsuccessful");

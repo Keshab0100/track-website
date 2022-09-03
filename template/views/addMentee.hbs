@@ -10,71 +10,34 @@
 </head>
 
 <body>
-    <div class="split-screen">
-        <div class="left">
-            {{!-- <br>
-            <div class="form" data-aos="fade-up">
-                <div class="input-container">
-                    <label for="fname">Full Name</label>
-                    <input id="fname" name="fname" type="text" placeholder="Full Name" required>
-                </div>
-                <div class="input-container">
-                    <label for="email">Email address</label>
-                    <input id="email" name="email" type="email" placeholder="Email" required>
-                </div>
-                <div class="input-container">
-                    <label for="mentorid">Mentor ID</label>
-                    <input id="mentorid" name="mentorID" type="text" placeholder="Menter ID" required>
-                </div>
-                <div class="input-container">
-                    <label for="password">Password</label>
-                    <input id="password" name="password" type="password" placeholder="Password" required>
-                    <i class="far fa-eye-slash"></i>
-                </div>
-                <button class="register-btn" id="submitbtn" type="submit">Register</button>
-                </section>
-            </div> --}}
-            <div class="form">
-                <div class="input-container">
-                    <label for="name">Name</label>
-                    <input type="text" id="name">
-                </div>
-                <div class="input-container">
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
-                </div>
-                <div class="input-container">
-                    <label for="pno">Phone Number</label>
-                    <input type="number" id="pno">
-                </div>
-                <div class="input-container">
-                    <label for="usn">USN</label>
-                    <input type="text" id="usn">
-                </div>
-                <div class="input-container">
-                    <label for="codechef">Enter CodeChef Username</label>
-                    <input type="text" id="codechef">
-                </div>
-                <input type="submit" id="subtn" value="Submit">
+    <h1>Add your Mentee's Details</h1>
+    <div class="screen">
+        <div class="form">
+            <div class="input-container">
+                <label for="name">Name</label>
+                <input type="text" id="name">
             </div>
-        </div>
-        <div class="right" data-aos="fade-up">
-            <form action="" onsubmit="/menteeLogin">
-                {{!-- <div class="input-container">
-                    <label for="email">Codeforces Profile Url</label>
-                    <input type="email" id="email">
-                </div>
-                <div class="input-container">
-                    <label for="pno">Leetcode Profile Url</label>
-                    <input type="number" id="pno">
-                </div> --}}
-                {{!-- <div class="input-container">
-                    <label for="usn">USN</label>
-                    <input type="text" id="usn">
-                </div> --}}
-                {{!-- <input type="submit" id="subtn" value="Submit"> --}}
-            </form>
-
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+            <div class="input-container">
+                <label for="pno">Phone Number</label>
+                <input type="number" id="pno">
+            </div>
+            <div class="input-container">
+                <label for="usn">USN</label>
+                <input type="text" id="usn">
+            </div>
+            <div class="input-container">
+                <label for="codechef">Enter CodeChef Username</label>
+                <input type="text" id="codechef">
+            </div>
+            <div class="input-container">
+                <label for="codechef">Enter Codeforces Username</label>
+                <input type="text" id="codeforces">
+            </div>
+            <input type="submit" id="subtn" value="Submit">
         </div>
     </div>
 </body>
@@ -107,12 +70,14 @@
         var usn = document.getElementById('usn').value
         var email = document.getElementById('email').value
         var codechef = document.getElementById('codechef').value
+        var codeforces = document.getElementById('codeforces').value
         set(ref(database, 'mentee/' + usn), {
             name: pname,
             number: pno,
             usn: usn,
             email: email,
-            codechef: codechef
+            codechef: codechef,
+            codeforces: codeforces
         }).then(
             () => {
                 createUserWithEmailAndPassword(auth, pno)

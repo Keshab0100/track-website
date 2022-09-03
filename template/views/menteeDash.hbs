@@ -50,8 +50,12 @@
     <div id="piechart" style="width: 900px; height: 500px;"></div>
   </div>
 </body>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  const usn = window.localStorage.getItem('usn')
+  console.log("This is usn" + usn)
+</script>
 <script src="/menteeStats.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 
 </html>
