@@ -109,12 +109,12 @@
         var codechef = document.getElementById('codechef').value
         set(ref(database, 'mentee/' + usn), {
             name: pname,
-            no: pno,
+            number: pno,
             usn: usn,
             email: email,
             codechef: codechef
         }).then(
-            console.log("error")
+            window.open('/mentorDash', "__self")
         )
     });
 </script>

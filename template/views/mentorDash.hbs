@@ -12,106 +12,33 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<script>
-    /** const data = fetch("https://competitive-coding-api.herokuapp.com/api/codechef/keshab_02");
-    const dest = document.getElementById('datadisplay')
-    const arrdata = [data]
-    arrdata.map((thedata) => {
-       dest.innerHTML=  "<h4>thedata.user_details<h4>"
-    }) */
-</script>
 
-    <body onload="getData()">
-        <div class="navigation">
-            <ul>
-                <li class="list">
-                    <a href="#">
-                        <span class="text">Mentor Dashboard</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="/addMentee">
-                        <span class="text">Add new Mentees </span><i style="color:black" class="fa-solid fa-user-plus"></i>
-                    </a>
-                </li>
-            </ul>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="#">
+                    <span class="text">Mentor Dashboard</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="/addMentee">
+                    <span class="text">Add new Mentees </span><i style="color:black" class="fa-solid fa-user-plus"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="details">
+        <p><span class="name">Name : </span> <span class="n">ABC</span> </p>
+        <p><span class="email">Email : </span> <span class="e">abc</span></p>
+    </div>
+    <div class="testimonial">
+        <div class="smallcontainer">
+            <div class="row" id="fill"></div>
         </div>
-        <div class="details">
-            <p><span class="name">Name : </span> <span class="n">ABC</span> </p>
-            <p><span class="email">Email : </span> <span class="e">abc</span></p>
-        </div>
-        <div class="testimonial">
-            <div class="smallcontainer">
-                <div class="row">
-                    <div class="col-3" id="datadisplay">
-                        <h3 >Name : <span></span></h3>
-                        <h4 >Email : <span></span></h4>
-                         <h4 >USN : <span></span></h4>
-                        <h4>Codechef rating : <span id="cc"></span></h4>
-                          <h4>Codeforces rating : <span id="cf"></span></h4>
-                    </div>
-                    <div class="col-3">
-                        <h1>&#10077;</h1>
-                        <p>I purchased shoes which turned out to be durable and of good quality. Highly satisfied with their services and the product.</p>
-                        <div class="rating">
-                            &#9733; &#9733; &#9733; &#9733; &#9734;
-                        </div>
-                        <img src="./images/keshab.jpg"
-                            alt="">
-                            <h4>Keshab </h4>
-                    </div>
-                    <div class="col-3">
-                        <h1>&#10077;</h1>
-                        <p>I bought an Mi smart watch which was worth the price and also it was in good condition with perfect finishing. I am satisfied with the product.</p>
-                        <div class="rating">
-                            &#9733; &#9733; &#9733; &#9733; &#9734;
-                        </div>
-                        <img src="./images/shreya.jpg"
-                            alt="">
-                            <h4>Shreya</h4>
-                    </div>
-                </div>
+    </div>
+    <script src="/datafetch.js"></ript >
+            <script src="/datafirebase.js" type="module"></script>
+</body>
 
-            </div>
-        </div>
-        <div class="testimonial">
-            <div class="smallcontainer">
-                <div class="row">
-                    <div class="col-3">
-                        <h1>&#10077;</h1>
-                        <p>The quality of the tracksuit is very good. 5 star rating to the product according to price and the color is also pretty. I am satisfied with the product.</p>
-                        <div class="rating">
-                            &#9733; &#9733; &#9733; &#9733; &#9734;
-                        </div>
-                        <img src="./images/aditi.jpg"
-                            alt="">
-                            <h4>Aditi</h4>
-                    </div>
-                    <div class="col-3">
-                        <h1>&#10077;</h1>
-                        <p>I purchased shoes which turned out to be durable and of good quality. Highly satisfied with their services and the product.</p>
-                        <div class="rating">
-                            &#9733; &#9733; &#9733; &#9733; &#9734;
-                        </div>
-                        <img src="./images/keshab.jpg"
-                            alt="">
-                            <h4>Keshab </h4>
-                    </div>
-                    <div class="col-3">
-                        <h1>&#10077;</h1>
-                        <p>I bought an Mi smart watch which was worth the price and also it was in good condition with perfect finishing. I am satisfied with the product.</p>
-                        <div class="rating">
-                            &#9733; &#9733; &#9733; &#9733; &#9734;
-                        </div>
-                        <img src="./images/shreya.jpg"
-                            alt="">
-                            <h4>Shreya</h4>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <script src="/datafetch.js"></script>
-    </body>
-
-</html >
+</html>
