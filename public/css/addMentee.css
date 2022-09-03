@@ -1,12 +1,16 @@
+@font-face {
+  font-family: "sofia";
+  src: url("/fonts/S_P_S_R.otf");
+}
 :root {
   font-size: 100%;
   font-size: 16px;
-  --primary: #f6c453;
+  --primary: #ffda58;
 }
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "sofia";
   font-weight: 500;
 }
 h1 {
