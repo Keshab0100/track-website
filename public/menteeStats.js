@@ -6,11 +6,13 @@ const cfrate = document.getElementById("cfrate");
 const cfrank = document.getElementById("cfrank");
 
 const total = document.getElementById("total");
+var ccun = "keshab_02"
+var cfun = "nishant403"
 
 function getData() {
-  url1 = "https://competitive-coding-api.herokuapp.com/api/codechef/keshab_02";
+  url1 = `https://competitive-coding-api.herokuapp.com/api/codechef/${ccun}`;
   url2 =
-    "https://competitive-coding-api.herokuapp.com/api/codeforces/nishant403";
+    `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
   url3 =
     "https://competitive-coding-api.herokuapp.com/api/leetcode/chaharnishant";
   fetch(url1)

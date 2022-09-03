@@ -13,9 +13,9 @@
   height: 63px;
   background: #f6c453;
   display: flex;
-  justify-content: center;
   align-items: center;
   border-radius: 10px;
+
 }
 
 .navigation ul {
@@ -29,7 +29,8 @@
   height: 70px;
 }
 .navigation ul li .text {
-  width: 200px;
+  width: 300px;
+  margin-left: 0px;
 }
 .list {
   padding: 2px;
@@ -45,7 +46,6 @@
   font-weight: 500;
   text-decoration: none;
 }
-
 .navigation ul li a .icon {
   position: relative;
   display: block;
@@ -138,4 +138,8 @@
   font-weight: 600;
   color: rgb(38, 39, 39);
   font-size: 16px;
+}
+
+.navigation ul li a .text{
+  font-size: 2rem;
 }

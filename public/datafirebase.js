@@ -17,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbref = ref(database);
+var usnGo;
 get(child(dbref, "mentee"))
   .then((snapshot) => {
     if (snapshot.exists()) {
@@ -27,33 +28,43 @@ get(child(dbref, "mentee"))
       });
       console.log(dataaaja);
 
+
+      const cf100 = dataaaja[0].codeforces;
+      console.log(cf100);
+
       dataaaja.map((data) => {
-        console.log(data);
+        // console.log(data);
         const cc = "codechef";
+        const cfun = data.codeforces || "keshab01"
         const ccum = data.codechef;
         const url1 = `https://competitive-coding-api.herokuapp.com/api/${cc}/${ccum}`;
-        const url2 =
-          "https://competitive-coding-api.herokuapp.com/api/codeforces/keshab01";
+        const url2 = `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
         fetch(url1)
           .then((response) => {
             return response.json();
           })
           .then((datamera) => {
+            const usn100 = data.usn;
+            // const cc100=usn100.codechef;
+            // console.log(cc100);
+
             const card = document.createElement("div");
             card.classList = "col-3";
-            document.getElementById("fill").innerHTML += `
-        <a class="col-3" href="/menteeDash">
-        <h3 >Name : <span id="name">${data.name}</span></h3>
-        <h4 >Email : <span id="email">${data.email}</span></h4>
-        <h4 >USN : <span id="usn">${data.usn}</span></h4>
-        <h4>Codechef rating : <span id="cc">${datamera.rating}</span></h4>
-        </a>`;
+            const fill = document.getElementById("fill")
+            fill.innerHTML += `
+              <a class="col-3" href="/menteeDash" id="${data.usn}" onclick = "give(${data.usn})">
+              <h3 >Name : <span id="name">${data.name}</span></h3>
+              <h4 >Email : <span id="email">${data.email}</span></h4>
+              <h4 >USN : <span id="usn">${data.usn}</span></h4>
+              <h4>Codechef rating : <span id="cc">${datamera.rating}</span></h4>
+              </a>`;
           });
         fetch(url2)
           .then((response) => {
             return response.json();
           })
-          .then((data) => {});
+          .then((data) => { });
+        usnGo = data.usn
       });
     } else {
       alert("unsuccessful");
