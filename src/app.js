@@ -13,7 +13,21 @@ app.use(express.static(staticPath));
 app.get("/", (req, res) => {
   res.render("home");
 });
-
+app.get("/mentorSign", (req, res) => {
+  res.render("mentorSign");
+});
+app.get("/mentorLogin", (req, res) => {
+  res.render("mentorLogin");
+});
+app.get("/mentorDash", (req, res) => {
+  res.render("mentorDash");
+});
+app.get("/addMentee", (req, res) => {
+  res.render("addMentee");
+});
+app.get("/menteeLogin", (req, res) => {
+  res.render("menteeLogin");
+});
 app.listen(port, () => {
   console.log("Listening");
 });
