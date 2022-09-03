@@ -1,141 +1,136 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.navigation{
-    width: 100%;
-    height: 63px;
-    background: #f6c453;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-   
-
+.navigation {
+  width: 100%;
+  height: 63px;
+  background: #f6c453;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
-.navigation ul li{
-    
-    list-style: none;
-    width: 300px;
-    height: 70px;
-    
+.navigation ul li {
+  list-style: none;
+  width: 300px;
+  height: 70px;
 }
-.navigation ul{
-    display: flex;
-    width: 350px;
+.navigation ul {
+  display: flex;
+  width: 350px;
 }
 
-.navigation ul li .text{
-    width: 200px;
+.navigation ul li .text {
+  width: 200px;
 }
-.list{
-    padding: 2px;
+.list {
+  padding: 2px;
 }
-.navigation ul li a{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    text-align: center;
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
   font-weight: 500;
   text-decoration: none;
 }
 
-.navigation ul li a .icon{
-    position: relative;
-    display: block;
-    line-height: 80px;
-    font-size: 1.5em;
-    text-align: center;
-    transition: 0.5s;
-    
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 80px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
 }
 
-.navigation ul li:hover a .icon
-{
-    transform: translateY(-10px);
+.navigation ul li:hover a .icon {
+  transform: translateY(-10px);
 }
 
-.navigation ul li a .text{
-   text-decoration: none;
-    color: black;
-    font-weight: 420;
-    font-size: 1.6rem;
-    margin-top: 0.4rem;
-   
-    transition: 0.5s;
-    
-    transform: translateY(5px);
+.navigation ul li a .text {
+  text-decoration: none;
+  color: black;
+  font-weight: 420;
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+
+  transition: 0.5s;
+
+  transform: translateY(5px);
 }
 
-.navigation ul li:hover a .text{
+.navigation ul li:hover a .text {
   opacity: 1;
   transform: translateY(10px);
 }
 
-.name{
+.name {
   font-size: 2rem;
   display: inline-block;
   padding-left: 9rem;
   padding-top: 2rem;
 }
-.email{
-    font-size: 2rem;
-    display: inline-block;
-    padding-left: 9rem;
-    padding-top: 2rem;
-
+.email {
+  font-size: 2rem;
+  display: inline-block;
+  padding-left: 9rem;
+  padding-top: 2rem;
 }
-.usn{
-    font-size: 2rem;
-    display: inline-block;
-    padding-left: 9rem;
-    padding-top: 2rem;
-
+.usn {
+  font-size: 2rem;
+  display: inline-block;
+  padding-left: 9rem;
+  padding-top: 2rem;
 }
 
-.codechef{
-
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    margin: 3rem;
-    padding-top: 2rem;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-    cursor:pointer;
-    transition:transform 0.5s ;
-    
+.codechef {
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  margin: 3rem;
+  padding-top: 2rem;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
 }
-.codeforces{
-
-    text-align: center;
-    margin: 3rem;
-    padding: 10px 10px 10px 10px;
-    padding-top: 2rem;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-    cursor:pointer;
-    transition:transform 0.5s ;
-    
+.codeforces {
+  text-align: center;
+  margin: 3rem;
+  padding: 10px 10px 10px 10px;
+  padding-top: 2rem;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
 }
 
-.leetcode{
-    text-align: center;
-    margin: 3rem;
-    padding: 10px 10px 10px 10px;
-    padding-top: 2rem;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-    cursor:pointer;
-    transition:transform 0.5s ;
+.leetcode {
+  text-align: center;
+  margin: 3rem;
+  padding: 10px 10px 10px 10px;
+  padding-top: 2rem;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
 }
 
-
-.mhead{
-    text-align: center;
-    font-size: 1.5rem;
+.mhead {
+  text-align: center;
+  font-size: 1.5rem;
 }
-h4{
-    padding: 1rem;
-    font-size: 1rem;
+h4 {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+#curve_chart1 {
+  margin-left: 20rem;
+}
+
+#curve_chart2 {
+  margin-left: 20rem;
 }

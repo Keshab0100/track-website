@@ -2,7 +2,7 @@
   font-size: 100%;
   font-size: 16px;
   line-height: 1.5;
-  --primary: #473fef;
+  --primary: #f5c518;
 }
 body {
   padding: 0;
@@ -42,7 +42,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #b2b0e4;
+  background-color: #f3e3ab;
 }
 .left {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),

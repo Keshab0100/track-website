@@ -2,7 +2,7 @@
   font-size: 100%;
   font-size: 16px;
   line-height: 1.5;
-  --primary: #a9a6e7;
+  --primary: #ffda58;
 }
 body {
   padding: 0;
@@ -40,12 +40,11 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #b2b0e4;
+  background-color: #ffe99c;
 }
 .left {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("/images/login.png");
-  background-size: cover;
+    url("/images/.png");
 }
 .right .copy {
   color: black;
@@ -143,7 +142,7 @@ label {
 .register-btn {
   display: block;
   width: 100%;
-  background: #4f47e2;
+  background: #ddb00e;
   color: white;
   font-weight: 700;
   border: none;
@@ -152,11 +151,7 @@ label {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
-.register-btn:hover {
-  background: #4138ea;
-  cursor: pointer;
-  color: #fff;
-}
+
 .or {
   position: relative;
   top: -27px;
