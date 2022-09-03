@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --clr : #222327;
+}
+
+
+
+.navigation{
+    width: 100%;
+    height: 63px;
+    background: #f6c453;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+
+.navigation ul{
+    display: flex;
+    width: 350px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 300px;
+    height: 70px;
+    
+}
+.navigation ul li .text{
+    width: 200px;
+}
+.list{
+    padding: 2px;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 80px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+.navigation ul li:hover a .icon
+{
+    transform: translateY(-10px);
+}
+
+.navigation ul li a .text{
+   text-decoration: none;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 1.4rem;
+   
+    transition: 0.5s;
+    
+    transform: translateY(5px);
+}
+
+.navigation ul li:hover a .text{
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+
+
+.name{
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.email{
+    font-weight: bold;
+    font-size: 28px;
+}
+.n{
+   font-size: 25px;
+}
+
+.e{
+   font-size: 25px;
+}
+
+.details{
+    padding: 20px;
+    margin-left: 44rem;
+}
+
+
+.testimonial{
+    padding: 50px;
+    margin-left: 28px;
+}
+.testimonial .col-3{
+    text-align: center;
+    padding:15px;
+    margin: 15px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor:pointer;
+    transition:transform 0.5s ;
+    display: inline-block;
+    width: 28rem;
+   
+
+}
+.testimonial .col-3 img{
+    width: 20px;
+    margin-top: 50px;
+    border-radius: 50%;
+}
+
+.testimonial .col-3:hover{
+    transform: translateY(-10px);
+
+}
+.testimonial .col-3 h1{
+    font-size: 60px;
+    color: rgb(240, 138, 43)
+}
+.col-3 p{
+    font-size: 12px;
+    margin: 12px 0;
+    color: rgb(95, 95, 93);
+}
+.testimonial .col-3 h4{
+    font-weight: 600;
+    color: rgb(38, 39, 39);
+    font-size: 16px;
+}
