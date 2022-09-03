@@ -42,12 +42,12 @@ get(child(dbref, "mentee"))
             const card = document.createElement("div");
             card.classList = "col-3";
             document.getElementById("fill").innerHTML += `
-        <div class="col-3" id="datadisplay">
+        <a class="col-3" href="/menteeDash">
         <h3 >Name : <span id="name">${data.name}</span></h3>
         <h4 >Email : <span id="email">${data.email}</span></h4>
         <h4 >USN : <span id="usn">${data.usn}</span></h4>
         <h4>Codechef rating : <span id="cc">${datamera.rating}</span></h4>
-        </div>`;
+        </a>`;
           });
         fetch(url2)
           .then((response) => {

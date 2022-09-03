@@ -114,7 +114,13 @@
             email: email,
             codechef: codechef
         }).then(
-            window.open('/mentorDash', "__self")
+            () => {
+                createUserWithEmailAndPassword(auth, pno)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        window.open('/mentorLogin', "_self")
+                    })
+                window.open('/mentorDash', "__self")
         )
     });
 </script>

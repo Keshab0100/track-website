@@ -5,10 +5,10 @@ const crank = document.getElementById("crank");
 const cfrate = document.getElementById("cfrate");
 const cfrank = document.getElementById("cfrank");
 
-function getData() {
-  url1 = "https://competitive-coding-api.herokuapp.com/api/codechef/keshab_02";
+function getData(ccun, cfun) {
+  url1 = "https://competitive-coding-api.herokuapp.com/api/codechef/nishant403";
   url2 =
-    "https://competitive-coding-api.herokuapp.com/api/codeforces/nishant403";
+    "https://competitive-coding-api.herokuapp.com/api/codeforces/19Weapons";
   fetch(url1)
     .then((response) => {
       return response.json();
