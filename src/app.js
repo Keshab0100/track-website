@@ -28,6 +28,9 @@ app.get("/addMentee", (req, res) => {
 app.get("/menteeLogin", (req, res) => {
   res.render("menteeLogin");
 });
+app.get("/menteeDash", (req, res) => {
+  res.render("menteeDash");
+});
 app.listen(port, () => {
   console.log("Listening");
 });
