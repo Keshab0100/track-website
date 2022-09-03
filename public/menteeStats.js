@@ -5,9 +5,9 @@ const crank = document.getElementById("crank");
 const cfrate = document.getElementById("cfrate");
 const cfrank = document.getElementById("cfrank");
 
-const total = document.getElementById("total");
-var ccun = "keshab_02"
-var cfun = "nishant403"
+
+var ccun = "keshab_02";
+var cfun = "nishant403";
 
 function getData() {
   url1 = `https://competitive-coding-api.herokuapp.com/api/codechef/${ccun}`;
@@ -48,9 +48,7 @@ function getData() {
       return response.json();
     })
     .then((data) => {
-      // console.log(data.rating);
-      // console.log(data.stars);
-      // console.log(data.country_rank);
+      
       cfrate.innerHTML = data.rating;
       cfrank.innerHTML = data.rank;
 
@@ -75,11 +73,9 @@ function getData() {
       return response.json();
     })
     .then((data) => {
-      // console.log(data.rating);
-      // console.log(data.stars);
-      // console.log(data.country_rank);
-      console.log(data);
-      total.innerHTML = data.total_problems_solved;
+     
+      console.log(data.total_problems_solved);
+      document.getElementById("total").innerHTML = data.total_problems_solved;
       var easy = parseInt(data.easy_questions_solved);
       var medium = parseInt(data.medium_questions_solved);
       var hard = parseInt(data.hard_questions_solved);
@@ -87,7 +83,7 @@ function getData() {
       console.log(easy);
 
       var chart = document.getElementById("piechart");
-      //   drawChart2();
+        drawChart2(easy,medium,hard);
     });
 }
 google.charts.load("current", { packages: ["corechart"] });
@@ -113,7 +109,7 @@ function drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chartid) {
 }
 // google.charts.load("current", { packages: ["corechart"] });
 // google.charts.setOnLoadCallback(drawChart2);
-function drawChart2() {
+function drawChart2(easy, medium, hard) {
   var data = google.visualization.arrayToDataTable([
     ["Level", "Problems solved"],
     ["easy", easy],
@@ -122,7 +118,7 @@ function drawChart2() {
   ]);
 
   var options = {
-    title: "My Daily Activities",
+    title: "Statistics of problems solved",
   };
 
   var chart = new google.visualization.PieChart(
