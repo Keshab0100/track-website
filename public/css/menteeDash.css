@@ -143,6 +143,16 @@ body {
   transition: transform 0.5s;
   border-radius: 15px;
 }
+.atcoder {
+  text-align: center;
+  margin: 3rem;
+  padding: 10px 10px 10px 10px;
+  padding-top: 2rem;
+  box-shadow: 0 0 15px 0px #ffda58;
+
+  transition: transform 0.5s;
+  border-radius: 15px;
+}
 
 .mhead {
   text-align: center;

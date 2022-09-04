@@ -11,7 +11,7 @@ app.set("views", templatePath);
 app.use(express.static(staticPath));
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("index");
 });
 app.get("/mentorSign", (req, res) => {
   res.render("mentorSign");
