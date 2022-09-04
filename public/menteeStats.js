@@ -10,6 +10,7 @@ export function final(cc, cf) {
   const url1 = `https://competitive-coding-api.herokuapp.com/api/codechef/${ccun}`;
   const url2 = `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
   const url3 = `https://competitive-coding-api.herokuapp.com/api/leetcode/chaharnishant`;
+  const url4 = `https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=nishant02&from_second=2`;
   fetch(url1)
     .then((response) => {
       return response.json();
