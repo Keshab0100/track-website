@@ -36,7 +36,7 @@ p {
   color: black(25, 21, 226);
 }
 .container {
-  max-width: 1300px;
+  max-width: 98.7vw;
   margin: auto;
   padding-left: 50px;
   padding-right: 50px;
@@ -73,81 +73,83 @@ p {
   border-radius: 30px;
   transition: background 0.5s;
 }
+.container .navbar .logo img {
+  width: 80px;
+  border-radius: 5px;
+}
 
 #header {
   background: radial-gradient(#fff, #fedf6e);
   height: 100vh;
+  margin: 0px;
+  width: 170vw;
 }
 #header .row {
   margin-top: 70px;
 }
-
-
-.brands{
-  margin: 100px auto;
+.brands {
+  display: block;
+  position: relative;
+  margin: 20px auto;
   text-align: center;
-  padding: 10px 10px;
+  padding: 10px;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-  
-  transition:transform 0.5s ;
-
+  transition: transform 0.5s;
 }
-.col-5{
-    width: 160px;
-
+.col-5 {
+  width: 160px;
 }
-.col-5 img{
-    width: 50%;
-   cursor: pointer; 
-   filter: grayscale(3%);
+.col-5 img {
+  width: 50%;
+  cursor: pointer;
+  filter: grayscale(3%);
 }
 
-.mhead{
+.mhead {
   font-size: 1.5rem;
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
-.testimonial{
+.testimonial {
   padding-top: 0px;
   padding-bottom: 5px;
 }
-.testimonial .col-3{
+.testimonial .col-3 {
   text-align: center;
   padding: 5px;
   width: 30rem;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-  cursor:pointer;
-  transition:transform 0.3s ;
-
+  cursor: pointer;
+  transition: transform 0.3s;
 }
-.testimonial .col-3 img{
+.testimonial .col-3 img {
   width: 50px;
   margin-top: 3px;
   border-radius: 50%;
 }
 
-.testimonial .col-3:hover{
+.testimonial .col-3:hover {
   transform: translateY(-10px);
-
 }
-.testimonial .col-3 h1{
+.testimonial .col-3 h1 {
   font-size: 50px;
-  color: rgb(240, 138, 43)
+  color: rgb(240, 138, 43);
 }
-.col-3 p{
+.col-3 p {
   font-size: 12px;
   margin: 12px 0;
   color: rgb(95, 95, 93);
 }
-.testimonial .col-3 h4{
+.testimonial .col-3 h4 {
   font-weight: 600;
   color: rgb(38, 39, 39);
   font-size: 16px;
 }
 
-.testimonial .mhead{
+.testimonial .mhead {
   text-align: center;
 }
-
 
 footer {
   margin-top: 2.15rem;
@@ -217,4 +219,11 @@ footer {
   text-transform: uppercase;
   opacity: 0.8;
   font-weight: 200;
+}
+.col-2 #ifame {
+  max-width: 200%;
+  padding: 50px 0;
+  width: 40rem;
+  height: 30rem;
+  border: none;
 }
