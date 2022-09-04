@@ -15,6 +15,7 @@ function getData() {
     `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
   url3 =
     "https://competitive-coding-api.herokuapp.com/api/leetcode/chaharnishant";
+    url4="https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=nishant02&from_second=2";
   fetch(url1)
     .then((response) => {
       return response.json();
@@ -44,7 +45,48 @@ function getData() {
       drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chart1);
     });
 
-  fetch(url2)
+  fetch(url4)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      
+      
+
+  var s1=data[0].result;
+
+  var s2=data[1].result;
+
+  var s3=data[2].result;
+
+  var s4=data[3].result;
+
+  var s5=data[4].result;
+
+  var s6=data[5].result;
+
+  var s7=data[6].result;
+
+  var s8=data[7].result;
+var wa=0, ac=0;
+
+  for(var i=0;i<7;i++)
+  {
+    if(data[i].result=="WA")
+      wa++;
+      else
+      ac++;
+  }
+     
+
+      var chart4 = document.getElementById("piechart2");
+      drawChart3(wa,ac);
+      
+    });
+
+
+
+    fetch(url2)
     .then((response) => {
       return response.json();
     })
@@ -125,6 +167,27 @@ function drawChart2(easy, medium, hard) {
 
   var chart = new google.visualization.PieChart(
     document.getElementById("piechart")
+  );
+
+  chart.draw(data, options);
+}
+
+
+
+function drawChart3(wa, ac) {
+  var data = google.visualization.arrayToDataTable([
+    ["Status", "Number of Problems solved"],
+    ["WA (rejected)", wa],
+    ["AC (accepted)", ac]
+    
+  ]);
+
+  var options = {
+    title: "Statistics of problem's submission",
+  };
+
+  var chart = new google.visualization.PieChart(
+    document.getElementById("piechart2")
   );
 
   chart.draw(data, options);
