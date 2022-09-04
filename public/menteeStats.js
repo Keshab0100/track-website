@@ -6,6 +6,8 @@ const cfrate = document.getElementById("cfrate");
 const cfrank = document.getElementById("cfrank");
 
 
+
+
 var ccun = "keshab_02";
 var cfun = "nishant403";
 

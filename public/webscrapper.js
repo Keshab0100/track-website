@@ -33,14 +33,14 @@ const request= require("request");
 
 
 
-request('https://atcoder.jp/users/ecnerwala',(error,response, html)=>{
+request('https://www.hackerearth.com/@bhatia.nishant',(error,response, html)=>{
     if(!error && response.statusCode==200)
     {
         const $ = cheerio.load(html);
-        // const point= $('#content .container .container--inner .row .plR h3 ');
-          const point= $('.dl-table[1] tbody tr .no-break ');
-        console.log(point.length)
-        console.log( point.html());
+       
+          const points= $(' .metrics-container .points .metric .value');
+        console.log(points.length)
+        console.log( points.html());
 
     }
 })
