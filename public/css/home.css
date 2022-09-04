@@ -1,11 +1,12 @@
-* {
-  margin: 0;
-  padding: 0%;
-
-  box-sizing: border-box;
+@font-face {
+  font-family: "sofia";
+  src: url("/fonts/S_P_S_R.otf");
 }
-body {
-  font-family: "Poppins", sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "sofia";
 }
 .navbar {
   display: flex;
@@ -73,11 +74,11 @@ p {
   transition: background 0.5s;
 }
 
-.header {
-  background: radial-gradient(#fff, #ffedac);
+#header {
+  background: radial-gradient(#fff, #fedf6e);
   height: 100vh;
 }
-.header .row {
+#header .row {
   margin-top: 70px;
 }
 
