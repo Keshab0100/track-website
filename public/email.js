@@ -29,7 +29,7 @@ const structureMailOption = (transporter) => {
     from: "keshab0121@gmail.com",
     to: "palak@gmail.com",
     subject: "using nodemailer",
-    text: "hello world",
+    text: "hello user",
     html: `<h2>Content to be sent to the volunteer</h2>`,
   };
   transporter.sendMail(mailOption, (err, info) => {

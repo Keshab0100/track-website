@@ -38,7 +38,8 @@ function getData() {
 
       var m4 = parseInt(data.contest_ratings[3].getmonth);
       var r4 = parseInt(data.contest_ratings[3].rank);
-
+      if(r1<r2 || r2< r3 || r3<r4)
+      alert("rank has fallen in codechef");
       var chart1 = document.getElementById("curve_chart1");
       drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chart1);
     });
@@ -54,7 +55,7 @@ function getData() {
 
       var m1 = 4;
       var r1 = parseInt(data.contests[0].Rank);
-
+      
       var m2 = 3;
       var r2 = parseInt(data.contests[1].Rank);
 
@@ -63,6 +64,7 @@ function getData() {
 
       var m4 = 1;
       var r4 = parseInt(data.contests[3].Rank);
+     
 
       var chart2 = document.getElementById("curve_chart2");
       drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chart2);
