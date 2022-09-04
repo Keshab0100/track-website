@@ -18,8 +18,10 @@
           <span class="text">Mentee Dashboard </span><i style="color:black" class="fa-solid fa-user-plus"></i>
         </a>
       </li>
-      <li id="edit">
-        Edit
+      <li>
+        <div id="edit">
+          Edit
+        </div>
       </li>
       <li>
         <div id="delete">
@@ -102,12 +104,12 @@
 </script>
 <script type="module">
   import {
+    remove,
     getDatabase,
     get,
     ref,
     child,
     update,
-    remove
   } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
   import { final } from "/menteeStats.js";
@@ -127,6 +129,7 @@
   const dbref = ref(database);
   const edit = document.getElementById('edit')
   const deleted = document.getElementById('delete')
+  const usnInt = parseInt(usn)
   get(child(dbref, "mentee/" + usn))
     .then((snapshot) => {
       if (snapshot.exists()) {
