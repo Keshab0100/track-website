@@ -1,23 +1,16 @@
-const rate = document.getElementById("rate");
-const stars = document.getElementById("stars");
-const crank = document.getElementById("crank");
+export function final(cc, cf) {
+  const rate = document.getElementById("rate");
+  const stars = document.getElementById("stars");
+  const crank = document.getElementById("crank");
+  const cfrate = document.getElementById("cfrate");
+  const cfrank = document.getElementById("cfrank");
+  var ccun = cc;
+  var cfun = cf;
 
-const cfrate = document.getElementById("cfrate");
-const cfrank = document.getElementById("cfrank");
-
-
-
-
-var ccun = "keshab_02";
-var cfun = "nishant403";
-
-function getData() {
-  url1 = `https://competitive-coding-api.herokuapp.com/api/codechef/${ccun}`;
-  url2 =
-    `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
-  url3 =
-    "https://competitive-coding-api.herokuapp.com/api/leetcode/chaharnishant";
-    url4="https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=nishant02&from_second=2";
+  const url1 = `https://competitive-coding-api.herokuapp.com/api/codechef/${ccun}`;
+  const url2 = `https://competitive-coding-api.herokuapp.com/api/codeforces/${cfun}`;
+  const url3 = `https://competitive-coding-api.herokuapp.com/api/leetcode/chaharnishant`;
+  const url4="https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=nishant02&from_second=2";
   fetch(url1)
     .then((response) => {
       return response.json();
@@ -41,8 +34,7 @@ function getData() {
 
       var m4 = parseInt(data.contest_ratings[3].getmonth);
       var r4 = parseInt(data.contest_ratings[3].rank);
-      if(r1<r2 || r2< r3 || r3<r4)
-      alert("rank has fallen in codechef");
+
       var chart1 = document.getElementById("curve_chart1");
       drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chart1);
     });
@@ -52,54 +44,44 @@ function getData() {
       return response.json();
     })
     .then((data) => {
-      
-      
+      var s1 = data[0].result;
 
-  var s1=data[0].result;
+      var s2 = data[1].result;
 
-  var s2=data[1].result;
+      var s3 = data[2].result;
 
-  var s3=data[2].result;
+      var s4 = data[3].result;
 
-  var s4=data[3].result;
+      var s5 = data[4].result;
 
-  var s5=data[4].result;
+      var s6 = data[5].result;
 
-  var s6=data[5].result;
+      var s7 = data[6].result;
 
-  var s7=data[6].result;
+      var s8 = data[7].result;
+      var wa = 0,
+        ac = 0;
 
-  var s8=data[7].result;
-var wa=0, ac=0;
-
-  for(var i=0;i<7;i++)
-  {
-    if(data[i].result=="WA")
-      wa++;
-      else
-      ac++;
-  }
-     
+      for (var i = 0; i < 7; i++) {
+        if (data[i].result == "WA") wa++;
+        else ac++;
+      }
 
       var chart4 = document.getElementById("piechart2");
-      drawChart3(wa,ac);
-      
+      drawChart3(wa, ac);
     });
 
-
-
-    fetch(url2)
+  fetch(url2)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      
       cfrate.innerHTML = data.rating;
       cfrank.innerHTML = data.rank;
 
       var m1 = 4;
       var r1 = parseInt(data.contests[0].Rank);
-      
+
       var m2 = 3;
       var r2 = parseInt(data.contests[1].Rank);
 
@@ -108,7 +90,6 @@ var wa=0, ac=0;
 
       var m4 = 1;
       var r4 = parseInt(data.contests[3].Rank);
-     
 
       var chart2 = document.getElementById("curve_chart2");
       drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chart2);
@@ -119,7 +100,6 @@ var wa=0, ac=0;
       return response.json();
     })
     .then((data) => {
-     
       console.log(data.total_problems_solved);
       document.getElementById("total").innerHTML = data.total_problems_solved;
       var easy = parseInt(data.easy_questions_solved);
@@ -129,59 +109,56 @@ var wa=0, ac=0;
       console.log(easy);
 
       var chart = document.getElementById("piechart");
-        drawChart2(easy,medium,hard);
+      drawChart2(easy, medium, hard);
     });
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chartid) {
+    var data = google.visualization.arrayToDataTable([
+      ["month", "rank"],
+      [m1, r1],
+      [m2, r2],
+      [m3, r3],
+      [m4, r4],
+    ]);
+
+    var options = {
+      title: "Contest Statistics",
+      curveType: "function",
+      legend: { position: "bottom" },
+    };
+
+    var chart = new google.visualization.LineChart(chartid);
+
+    chart.draw(data, options);
+  }
+  // google.charts.load("current", { packages: ["corechart"] });
+  // google.charts.setOnLoadCallback(drawChart2);
+  function drawChart2(easy, medium, hard) {
+    var data = google.visualization.arrayToDataTable([
+      ["Level", "Problems solved"],
+      ["easy", easy],
+      ["medium", medium],
+      ["hard", hard],
+    ]);
+
+    var options = {
+      title: "Statistics of problems solved",
+    };
+
+    var chart = new google.visualization.PieChart(
+      document.getElementById("piechart")
+    );
+
+    chart.draw(data, options);
+  }
 }
-google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(drawChart);
-function drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chartid) {
-  var data = google.visualization.arrayToDataTable([
-    ["month", "rank"],
-    [m1, r1],
-    [m2, r2],
-    [m3, r3],
-    [m4, r4],
-  ]);
-
-  var options = {
-    title: "Contest Statistics",
-    curveType: "function",
-    legend: { position: "bottom" },
-  };
-
-  var chart = new google.visualization.LineChart(chartid);
-
-  chart.draw(data, options);
-}
-// google.charts.load("current", { packages: ["corechart"] });
-// google.charts.setOnLoadCallback(drawChart2);
-function drawChart2(easy, medium, hard) {
-  var data = google.visualization.arrayToDataTable([
-    ["Level", "Problems solved"],
-    ["easy", easy],
-    ["medium", medium],
-    ["hard", hard],
-  ]);
-
-  var options = {
-    title: "Statistics of problems solved",
-  };
-
-  var chart = new google.visualization.PieChart(
-    document.getElementById("piechart")
-  );
-
-  chart.draw(data, options);
-}
-
-
 
 function drawChart3(wa, ac) {
   var data = google.visualization.arrayToDataTable([
     ["Status", "Number of Problems solved"],
     ["WA (rejected)", wa],
-    ["AC (accepted)", ac]
-    
+    ["AC (accepted)", ac],
   ]);
 
   var options = {
