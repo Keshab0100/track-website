@@ -9,7 +9,7 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
-<body onload="getData()">
+<body>
   <div class="navigation">
     <ul>
 
@@ -17,6 +17,13 @@
         <a href="">
           <span class="text">Mentee Dashboard </span><i style="color:black" class="fa-solid fa-user-plus"></i>
         </a>
+      </li>
+      <li id="edit">
+        Edit
+      </li>
+      <li id="delete">
+        Delete
+
       </li>
     </ul>
   </div>
@@ -61,12 +68,87 @@
     </div>
   </div>
 </body>
-<script>
-  const usn = window.localStorage.getItem('usn')
-  console.log("This is usn" + usn)
-</script>
-<script src="/menteeStats.js"></script>
+<script src="/menteeStats.js" type="module"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  var url_string = window.location;
+  var url = new URL(url_string);
+  var usn = "";
+  console.log(url);
+  for (var i = 12; i < 22; i++) {
+    usn += url.pathname[i];
+  }
+  console.log(usn);
+  var name = document.getElementsByClassName('name')
+  var email = document.getElementsByClassName('email')
+  var usnd = document.getElementsByClassName('usn')
+  usnd.innerHTML = usn
+</script>
+<script type="module">
+  import {
+    getDatabase,
+    get,
+    ref,
+    child,
+    update,
+    remove
+  } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+  import { final } from "/menteeStats.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyDBHmrl7oJmnxjEGhXaTrhuk5sOS01b3bs",
+    authDomain: "ic-hacks.firebaseapp.com",
+    databaseURL: "https://ic-hacks-default-rtdb.firebaseio.com",
+    projectId: "ic-hacks",
+    storageBucket: "ic-hacks.appspot.com",
+    messagingSenderId: "89955355894",
+    appId: "1:89955355894:web:c8e52d51f7117c76b070d7",
+  };
+  var cc = "";
+  var cf = "";
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const dbref = ref(database);
+  const edit = document.getElementById('edit')
+  const deleted = document.getElementById('delete')
+  get(child(dbref, "mentee/" + usn))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val()
+        console.log(data)
+        cc += data.codechef
+        cf += data.codeforces
+        name = data.name
+        email = data.email
+        console.log(cc, cf)
+        final(cc, cf)
+      } else {
+        alert("unsuccessful");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  edit.addEventListener('click', (err) => {
+    update(ref(dbref, "mentee/" + usn), {
+      name: pname,
+      number: pno,
+      usn: usn,
+      email: email,
+      codechef: codechef,
+      codeforces: codeforces
+    }).then(() => {
+      console.log("loggng")
+    })
+  })
+
+  deleted.addEventListener('click', (err) => {
+    remove(ref(dbref, 'mentee/' + usn))
+      .then(() => {
+        console.log("hello boys")
+      })
+  })
+</script>
 </body>
 
 </html>

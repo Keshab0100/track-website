@@ -50,7 +50,7 @@ get(child(dbref, "mentee"))
                 card.classList = "col-3";
                 const fill = document.getElementById("fill");
                 fill.innerHTML += `
-                  <a class="col-3" href="/menteeDash" id="${data.usn}" onclick = "send(${data.usn})">
+                  <a class="col-3" href="/menteeDash/${data.usn}" id="${data.usn}" onclick = "send(${data.usn})">
                   <h4 >Name : <span id="name">${data.name}</span></h4>
                   <h4 >Email : <span id="email">${data.email}</span></h4>
                   <h4 >USN : <span id="usn">${data.usn}</span></h4>
@@ -65,9 +65,6 @@ get(child(dbref, "mentee"))
                   cc: ccrat,
                   cf: cfrat,
                 });
-                function send(usn) {
-                  window.localStorage.setItem("usn", usn);
-                }
               });
           });
       });
