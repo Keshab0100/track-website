@@ -21,9 +21,10 @@
       <li id="edit">
         Edit
       </li>
-      <li id="delete">
-        Delete
-
+      <li>
+        <div id="delete">
+          Delete
+        </div>
       </li>
     </ul>
   </div>
@@ -158,7 +159,7 @@
   })
 
   deleted.addEventListener('click', (err) => {
-    remove(ref(dbref, 'mentee/' + usn))
+    remove(ref(dbref, 'mentee/1DS20CS153'))
       .then(() => {
         console.log("hello boys")
       })
