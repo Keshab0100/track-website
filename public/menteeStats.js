@@ -1,4 +1,4 @@
-export default function final(cc, cf) {
+export  function final(cc, cf) {
   const rate = document.getElementById("rate");
   const stars = document.getElementById("stars");
   const crank = document.getElementById("crank");
@@ -17,9 +17,7 @@ export default function final(cc, cf) {
       return response.json();
     })
     .then((data) => {
-      // console.log(data.rating);
-      // console.log(data.stars);
-      // console.log(data.country_rank);
+     
       rate.innerHTML = data.rating;
       stars.innerHTML = data.stars;
       crank.innerHTML = data.country_rank;
