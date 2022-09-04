@@ -1,4 +1,4 @@
-export function final(cc, cf) {
+export default function final(cc, cf) {
   const rate = document.getElementById("rate");
   const stars = document.getElementById("stars");
   const crank = document.getElementById("crank");
