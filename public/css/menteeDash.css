@@ -173,3 +173,33 @@ h4 {
 #piechart {
   margin-left: 0rem;
 }
+#edit {
+  font-size: 1.4rem;
+  width: 100px;
+  padding: 5px;
+  margin-top: 12px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(43, 255, 0);
+  box-shadow: 1px 1px 2px #888888;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 6rem;
+  text-align: center;
+  cursor: pointer;
+}
+#delete {
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.4rem;
+  width: 100px;
+  padding: 5px;
+  margin-top: 12px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 1px 1px 2px #888888;
+  border-radius: 5px;
+  margin-left: 2rem;
+  color: white;
+}

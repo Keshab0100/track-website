@@ -1,4 +1,4 @@
-export default function final(cc, cf) {
+export function final(cc, cf) {
   const rate = document.getElementById("rate");
   const stars = document.getElementById("stars");
   const crank = document.getElementById("crank");
@@ -35,7 +35,9 @@ export default function final(cc, cf) {
 
       var m4 = parseInt(data.contest_ratings[3].getmonth);
       var r4 = parseInt(data.contest_ratings[3].rank);
-
+      if (r4 - r3 >= 100) {
+        alert("Your mentee's rank has fallen. He might need help!!");
+      }
       var chart1 = document.getElementById("curve_chart1");
       drawChart(m1, m2, m3, m4, r1, r2, r3, r4, chart1);
     });

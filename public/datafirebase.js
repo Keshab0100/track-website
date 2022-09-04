@@ -4,6 +4,7 @@ import {
   ref,
   child,
   update,
+  remove,
 } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
 const firebaseConfig = {
@@ -18,10 +19,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbref = ref(database);
-var usnGo;
-// setInterval(function () {
-//   location.reload();
-// }, 40000);
 get(child(dbref, "mentee"))
   .then((snapshot) => {
     if (snapshot.exists()) {
