@@ -3,8 +3,10 @@ const port = process.env.PORT || 8000;
 const app = express();
 const path = require("path");
 
-const staticPath = path.join(__dirname, "../public");
-const templatePath = path.join(__dirname, "../template/views");
+const staticPath = path.join(__dirname, "public");
+const templatePath = path.join(__dirname, "template/views");
+
+console.log(templatePath);
 
 app.set("view engine", "hbs");
 app.set("views", templatePath);
